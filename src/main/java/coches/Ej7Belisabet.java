@@ -36,6 +36,7 @@ A partir de los datos almacenados en vehiculos.txt, crea tres archivos de texto 
 public class Ej7Belisabet {
 
     public static void main(String[] args) {
+        // Crea 30 vehículos (10 Turismos, 10 Deportivos y 10 Furgonetas) con valores de tu elección y guárdalos en una lista de objetos tipo Vehiculo.
         List<Vehiculo> listaVehiculos= new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             listaVehiculos.add(new Turismo());
@@ -43,8 +44,25 @@ public class Ej7Belisabet {
             listaVehiculos.add(new Furgoneta());
         }
         
-        listaVehiculos.forEach(System.out::println);
+        ServiciosFicheros.crearFichero(crearStringVehiculos(listaVehiculos), "vehiculos.txt");
+        ServiciosFicheros.leerArchivo("vehiculos.txt");
         
-        
+    }
+    
+    public static String crearStringVehiculos(List<Vehiculo> listaVehiculos){
+    int contador=0;
+    String tmp="";
+        for (int i = 0; i < listaVehiculos.size(); i++) {
+            Vehiculo get = listaVehiculos.get(i);
+            tmp+="%s - %s".formatted(String.valueOf(tipoVehiculo(get)), get.toString());
+            tmp+="\n";
+                     
+        }
+    return tmp;
+    }
+    
+    public static int tipoVehiculo(Vehiculo vehiculo){
+        return (vehiculo instanceof Turismo) ? 0 
+                : (vehiculo instanceof Deportivo) ? 1 : 2;
     }
 }

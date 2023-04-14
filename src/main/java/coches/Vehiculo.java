@@ -60,10 +60,7 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return """
-               
-        Bastidor:%s
-        Matricula:%s """.formatted(bastidor,matricula);
+        return "%s:%s".formatted(bastidor,matricula);
     }
     
     

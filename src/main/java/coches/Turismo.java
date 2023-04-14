@@ -64,10 +64,7 @@ public class Turismo extends Vehiculo{
     
     @Override
     public String toString() {
-        return """
-               Turismo
-               %s
-               Número de puertas: %s""".formatted(super.toString(),numPuertas);
+        return "%s:%s".formatted(super.toString(),numPuertas);
     }
 
     @Override

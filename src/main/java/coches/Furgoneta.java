@@ -62,11 +62,7 @@ public class Furgoneta extends Vehiculo{
 
     @Override
     public String toString() {
-        return """
-               Furgoneta
-               %s
-               capacidad: %s
-               volumen:%s""".formatted(super.toString(), capacidad, volumen);
+        return "%s:%s:%s".formatted(super.toString(), capacidad, volumen);
     }
 
     @Override

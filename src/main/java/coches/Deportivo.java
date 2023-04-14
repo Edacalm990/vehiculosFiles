@@ -35,10 +35,7 @@ public class Deportivo extends Vehiculo{
 
     @Override
     public String toString() {
-       return """
-              Deportivo
-              %s
-              cilindrada: %s""".formatted(super.toString(), cilindrada);
+       return "%s:%s".formatted(super.toString(), cilindrada);
     }
 
     @Override
