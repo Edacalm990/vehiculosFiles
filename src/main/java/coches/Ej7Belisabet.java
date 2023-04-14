@@ -27,7 +27,9 @@ Usando la jerarquía de la clase Vehículo, implementa un programa que realice l
 
 
 B.- Lectura del fichero vehiculos.txt
-Realiza un programa que lea los datos fichero vehiculos.txt. Para ello creará una lista de objetos de tipo Vehículo. El programa irá almacenando en la lista los objetos leídos desde el archivo de texto “vehículos.txt”. Una vez cargados todos los datos en la lista, ordena los vehículos por Marca y muestra el resultado por consola.
+Realiza un programa que lea los datos fichero vehiculos.txt. Para ello creará una lista de objetos de tipo Vehículo. 
+El programa irá almacenando en la lista los objetos leídos desde el archivo de texto “vehículos.txt”. 
+Una vez cargados todos los datos en la lista, ordena los vehículos por Marca y muestra el resultado por consola.
 
 
 C.- Generación de turismos.txt, deportivos.txt, furgonetas.txt.
@@ -36,7 +38,7 @@ A partir de los datos almacenados en vehiculos.txt, crea tres archivos de texto 
 public class Ej7Belisabet {
 
     public static void main(String[] args) {
-        // Crea 30 vehículos (10 Turismos, 10 Deportivos y 10 Furgonetas) con valores de tu elección y guárdalos en una lista de objetos tipo Vehiculo.
+        // A
         List<Vehiculo> listaVehiculos= new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             listaVehiculos.add(new Turismo());
@@ -45,7 +47,16 @@ public class Ej7Belisabet {
         }
         
         ServiciosFicheros.crearFichero(crearStringVehiculos(listaVehiculos), "vehiculos.txt");
+        
+        // B
         ServiciosFicheros.leerArchivo("vehiculos.txt");
+        List<String> listaVehiculosString=ServiciosFicheros.obtenerLista("vehiculos.txt");
+//        listaVehiculosString.sort((x,y)->{
+//                String [] c = x.split(":");
+//                c[]
+//                
+//                        });
+//        
         
     }
     
@@ -65,4 +76,7 @@ public class Ej7Belisabet {
         return (vehiculo instanceof Turismo) ? 0 
                 : (vehiculo instanceof Deportivo) ? 1 : 2;
     }
+    
+    
+    
 }
