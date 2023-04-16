@@ -11,7 +11,6 @@ import java.util.Random;
  * @author eli
  */
 public class Furgoneta extends Vehiculo{
-    //furgoneta su capacidad de carga en kilos y el volumen en metros cúbicos, por ejemplo.
     private int capacidad;
     private double volumen;
     private Random random=new Random();

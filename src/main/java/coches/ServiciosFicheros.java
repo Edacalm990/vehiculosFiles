@@ -38,6 +38,7 @@ public class ServiciosFicheros {
         return lineas;
     }
     
+    // crea un fichero con un String de datos y el nombre
      public static void crearFichero(String datos, String nombreFichero) {
 
         try {

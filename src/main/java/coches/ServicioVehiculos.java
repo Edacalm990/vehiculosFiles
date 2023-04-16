@@ -15,7 +15,9 @@ import java.util.Scanner;
  *
  * @author venganzaalchocolate
  */
+// clase para modificar/crear la lista de vehiculos
 public class ServicioVehiculos {
+    // se crea el String con el tipo de vehiculo 0 turismos, 1 deportivos, 2 furgonetas
     public static String crearStringVehiculos(List<Vehiculo> listaVehiculos) {
         String tmp = "";
         for (int i = 0; i < listaVehiculos.size(); i++) {
@@ -27,11 +29,13 @@ public class ServicioVehiculos {
         return tmp;
     }
 
+    // método que devuelve un int dependiendo del tipo de vehiculo
     public static int tipoVehiculo(Vehiculo vehiculo) {
         return (vehiculo instanceof Turismo) ? 0
                 : (vehiculo instanceof Deportivo) ? 1 : 2;
     }
 
+    // crea 3 archivos a partir de una única lista de vehiculos diferenciandolos por tipo
     public static void crearArchivosConListVehiculos(List<Vehiculo> lista) {
         List<Vehiculo> turismos = new ArrayList<>();
         List<Vehiculo> deportivos = new ArrayList<>();
@@ -51,13 +55,11 @@ public class ServicioVehiculos {
 
     }
 
+    // crea una lista de vehiculos a partir de un fichero
     public static List<Vehiculo> crearListVehiculoConArchivo(String fichero) {
         String[] tokens;
         String linea;
         List<Vehiculo> listaVehiculos = new ArrayList<>();
-        // Inicialización del flujo "datosFichero" en función del archivo llamado "idFichero"
-        // Estructura try-with-resources. Permite cerrar los recursos una vez finalizadas
-        // las operaciones con el archivo
         try ( Scanner datosFichero = new Scanner(new File(fichero), "UTF-8")) {
             // hasNextLine devuelve true mientras haya líneas por leer
             while (datosFichero.hasNextLine()) {
@@ -66,6 +68,7 @@ public class ServicioVehiculos {
                 // Se guarda en el array de String cada elemento de la
                 // línea en función del carácter separador de campos del fichero CSV
                 tokens = linea.split(":");
+                // llama al método crear vehiculo, creea un vehiculo con los datos de la linea
                 listaVehiculos.add(crearVehiculo(tokens));
             }
         } catch (FileNotFoundException e) {
@@ -76,6 +79,8 @@ public class ServicioVehiculos {
 
     public static Vehiculo crearVehiculo(String[] lista) {
         String tipoVehiculo = lista[0].substring(0, 1);
+        // comprueba el tipo de vehiculo
+        // crea el vehiculo según el tipo y sacando los datos del array que se pasa //jjj
         try {
             switch (tipoVehiculo) {
                 case "0" -> {

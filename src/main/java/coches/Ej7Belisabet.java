@@ -51,12 +51,14 @@ public class Ej7Belisabet {
         ServiciosFicheros.crearFichero(ServicioVehiculos.crearStringVehiculos(listaVehiculos), "vehiculos.txt");
 
         // B
+        System.out.println("-------------------- B --------------------");
         ServiciosFicheros.leerArchivo("vehiculos.txt");
         List<Vehiculo> listaVehiculosDos = ServicioVehiculos.crearListVehiculoConArchivo("vehiculos.txt");
         listaVehiculosDos.sort((x, y) -> x.getMarca().compareToIgnoreCase(y.getMarca()));
         listaVehiculosDos.forEach(System.out::println);
 
         // C
+        System.out.println("-------------------- C --------------------");
         ServicioVehiculos.crearArchivosConListVehiculos(listaVehiculosDos);
         ServiciosFicheros.leerArchivo("turismos.txt");
         ServiciosFicheros.leerArchivo("deportivos.txt");
