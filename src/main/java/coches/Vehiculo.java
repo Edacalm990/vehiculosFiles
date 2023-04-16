@@ -15,19 +15,22 @@ public abstract class Vehiculo {
     private String bastidor;
     private String matricula;
     private boolean estaEncendido;
+    private String marca;
 
     public Vehiculo() {
         this.bastidor = RandomStringUtils.randomAlphanumeric(10);
         this.matricula = RandomStringUtils.randomAlphanumeric(5);
+        this.marca= Marcas.marcaAleatoria();
     }
     
-    
-
-    // contructor por defecto con datos generados de forma aleatoria
-    public Vehiculo(String bastidor, String matricula) {
+    public Vehiculo(String marca, String bastidor, String matricula ) {
+        this.marca=marca;
         this.bastidor = bastidor;
         this.matricula = matricula;
+        
     }
+    
+    
 
     public boolean isEstaEncendido() {
         return estaEncendido;
@@ -60,7 +63,15 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return "%s:%s".formatted(bastidor,matricula);
+        return "%s:%s:%s".formatted(marca,bastidor,matricula);
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
     
     

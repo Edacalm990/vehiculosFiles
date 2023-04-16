@@ -20,15 +20,14 @@ public class Turismo extends Vehiculo{
         this.numPuertas=random.nextInt(5);
         this.tipo= CambiosMarchas.cambioMarcha();
     }
-    
-    
 
-    public Turismo(int numPuertas, String tipo, String bastidor, String matricula) {
-        super(bastidor, matricula);
+
+    public Turismo(String marca, String bastidor, String matricula,int numPuertas, String tipo) {
+        super(marca, bastidor, matricula);
         this.numPuertas = numPuertas;
         this.tipo = tipo;
     }
-
+    
     public int getNumPuertas() {
         return numPuertas;
     }
@@ -64,7 +63,7 @@ public class Turismo extends Vehiculo{
     
     @Override
     public String toString() {
-        return "%s:%s".formatted(super.toString(),numPuertas);
+        return "%s:%s:%s".formatted(super.toString(),numPuertas, tipo);
     }
 
     @Override

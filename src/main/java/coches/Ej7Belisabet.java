@@ -2,11 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
-
 package coches;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -34,49 +36,32 @@ Una vez cargados todos los datos en la lista, ordena los vehículos por Marca y 
 
 C.- Generación de turismos.txt, deportivos.txt, furgonetas.txt.
 A partir de los datos almacenados en vehiculos.txt, crea tres archivos de texto para almacenar los vehículos del mismo tipo.
-*/
+ */
 public class Ej7Belisabet {
 
     public static void main(String[] args) {
         // A
-        List<Vehiculo> listaVehiculos= new ArrayList<>();
+        List<Vehiculo> listaVehiculos = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             listaVehiculos.add(new Turismo());
             listaVehiculos.add(new Deportivo());
             listaVehiculos.add(new Furgoneta());
         }
-        
-        ServiciosFicheros.crearFichero(crearStringVehiculos(listaVehiculos), "vehiculos.txt");
-        
+
+        ServiciosFicheros.crearFichero(ServicioVehiculos.crearStringVehiculos(listaVehiculos), "vehiculos.txt");
+
         // B
         ServiciosFicheros.leerArchivo("vehiculos.txt");
-        List<String> listaVehiculosString=ServiciosFicheros.obtenerLista("vehiculos.txt");
-//        listaVehiculosString.sort((x,y)->{
-//                String [] c = x.split(":");
-//                c[]
-//                
-//                        });
-//        
-        
+        List<Vehiculo> listaVehiculosDos = ServicioVehiculos.crearListVehiculoConArchivo("vehiculos.txt");
+        listaVehiculosDos.sort((x, y) -> x.getMarca().compareToIgnoreCase(y.getMarca()));
+        listaVehiculosDos.forEach(System.out::println);
+
+        // C
+        ServicioVehiculos.crearArchivosConListVehiculos(listaVehiculosDos);
+        ServiciosFicheros.leerArchivo("turismos.txt");
+        ServiciosFicheros.leerArchivo("deportivos.txt");
+        ServiciosFicheros.leerArchivo("furgonetas.txt");
     }
-    
-    public static String crearStringVehiculos(List<Vehiculo> listaVehiculos){
-    int contador=0;
-    String tmp="";
-        for (int i = 0; i < listaVehiculos.size(); i++) {
-            Vehiculo get = listaVehiculos.get(i);
-            tmp+="%s - %s".formatted(String.valueOf(tipoVehiculo(get)), get.toString());
-            tmp+="\n";
-                     
-        }
-    return tmp;
-    }
-    
-    public static int tipoVehiculo(Vehiculo vehiculo){
-        return (vehiculo instanceof Turismo) ? 0 
-                : (vehiculo instanceof Deportivo) ? 1 : 2;
-    }
-    
-    
+
     
 }

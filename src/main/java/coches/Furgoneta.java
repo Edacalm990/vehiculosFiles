@@ -21,9 +21,8 @@ public class Furgoneta extends Vehiculo{
         this.volumen = random.nextDouble(100);
     }
 
-    
-    public Furgoneta(int capacidad, double volumen, String bastidor, String matricula) {
-        super(bastidor, matricula);
+    public Furgoneta(String marca, String bastidor, String matricula, int capacidad, double volumen ) {
+        super(marca, bastidor, matricula);
         this.capacidad = capacidad;
         this.volumen = volumen;
     }

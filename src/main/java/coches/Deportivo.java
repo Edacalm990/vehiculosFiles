@@ -17,13 +17,13 @@ public class Deportivo extends Vehiculo{
     public Deportivo() {
         this.cilindrada=random.nextDouble(50);
     }
-    
-    
 
-    public Deportivo(double cilindrada, String bastidor, String matricula) {
-        super(bastidor, matricula);
+
+    public Deportivo(String marca, String bastidor, String matricula,double cilindrada) {
+        super(marca, bastidor, matricula);
         this.cilindrada = cilindrada;
     }
+
 
     public double getCilindrada() {
         return cilindrada;

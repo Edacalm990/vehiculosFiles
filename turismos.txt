@@ -1,0 +1,10 @@
+0 - Ford:l6Gref6SJU:UIv7D:2:AUTÓMATICO
+0 - Ford:PhQIfRECc5:TDfvD:2:AUTÓMATICO
+0 - Ford:1wiIsYR0Tq:ndkAu:2:AUTÓMATICO
+0 - Opel:S5UkpRgTq5:1mluj:0:MANUAL
+0 - Opel:GRVjyI4W3n:8iORO:3:MANUAL
+0 - Opel:VFvUn2ogvj:EGMc2:3:AUTÓMATICO
+0 - Opel:t8KrPNeXkg:EMo0A:4:AUTÓMATICO
+0 - Peugeot:wvrhReleVX:j8vKK:2:MANUAL
+0 - SEAT:am45HFp6dw:u1pYy:0:AUTÓMATICO
+0 - Volkswagen:KkHQRtlraa:Ck8WV:3:MANUAL
